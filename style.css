@@ -26,6 +26,26 @@ header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Mobile menu toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     font-size: 20px;
     font-weight: 600;
@@ -35,12 +55,24 @@ header {
     color: transparent;
 }
 
+@media (max-width: 768px) {
+    .logo {
+        font-size: 24px;
+    }
+}
+
 nav a {
     margin-left: 35px;
     font-size: 15px;
     color: #ddd;
     transition: 0.3s;
     position: relative;
+}
+
+@media (max-width: 768px) {
+    nav a {
+        margin: 10px 0;
+    }
 }
 
 nav a:hover {
@@ -68,6 +100,98 @@ nav a:hover::after {
     justify-content: space-between;
     padding: 70px 60px;
     align-items: center;
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 20px;
+    }
+    
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    
+    .hero-text h2 {
+        font-size: 24px;
+    }
+    
+    .hero-text h3 {
+        font-size: 20px;
+    }
+    
+    .glow-circle {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .hero-img img {
+        width: 200px;
+    }
+    
+    .skills {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .skills span {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .about {
+        padding: 30px 20px;
+    }
+    
+    .projects {
+        padding: 30px 20px;
+    }
+    
+    .contact {
+        padding: 30px 20px;
+    }
+    
+    .contact-info p {
+        font-size: 16px;
+    }
+    
+    .stats div h1 {
+        font-size: 28px;
+    }
+    
+    .project-card {
+        padding: 15px;
+    }
+    
+    .project-card h3 {
+        font-size: 20px;
+    }
+    
+    .project-card p {
+        font-size: 14px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .contact-item h3 {
+        font-size: 18px;
+    }
+    
+    .contact-item p {
+        font-size: 14px;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-links a {
+        font-size: 16px;
+    }
 }
 
 .hero-text h2 {
@@ -137,6 +261,12 @@ nav a:hover::after {
 .hero-img {
     position: relative;
     animation: float 3s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .hero-img {
+        animation: none;
+    }
 }
 
 .glow-circle {
@@ -231,10 +361,22 @@ nav a:hover::after {
     margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+    .about-text h2 {
+        font-size: 28px;
+    }
+}
+
 .stats {
     margin-top: 30px;
     display: flex;
     gap: 50px;
+}
+
+@media (max-width: 480px) {
+    .stats {
+        gap: 30px;
+    }
 }
 
 .stats div h1 {
@@ -259,6 +401,13 @@ nav a:hover::after {
     margin-bottom: 50px;
     position: relative;
     display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .projects h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
 }
 
 .projects h2::after {
@@ -352,6 +501,13 @@ nav a:hover::after {
     margin-bottom: 50px;
     position: relative;
     display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .contact h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
 }
 
 .contact h2::after {
@@ -492,11 +648,19 @@ nav a:hover::after {
     .contact-container {
         flex-direction: column;
     }
+    
+    .stats {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
 }
 
 @media (max-width: 768px) {
     header {
         padding: 20px 30px;
+        flex-direction: column;
+        gap: 20px;
     }
     
     .hero {
@@ -517,6 +681,84 @@ nav a:hover::after {
     
     .project-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(13, 17, 23, 0.95);
+        border-radius: 10px;
+        padding: 20px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    nav.active {
+        display: flex;
+    }
+    
+    nav a {
+        margin: 15px 0;
+        font-size: 18px;
+    }
+    
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    
+    .hero-text h2 {
+        font-size: 28px;
+    }
+    
+    .hero-text h3 {
+        font-size: 22px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-fill, .btn-outline {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .contact-container {
+        gap: 30px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .projects {
+        padding: 50px 30px;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .project-links .btn-outline,
+    .project-links .btn-fill {
+        width: 100%;
+        text-align: center;
     }
 }
 

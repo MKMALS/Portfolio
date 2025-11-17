@@ -15,12 +15,19 @@
     <header>
         <div class="logo">Muthukumar</div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contacts</a>
-        </nav>
+        <div class="nav-menu">
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contacts</a>
+            </nav>
+        </div>
     </header>
 
     <!-- HERO SECTION -->
@@ -189,7 +196,19 @@
                     top: targetElement.offsetTop - 70,
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu after clicking
+                const nav = document.querySelector('nav');
+                nav.classList.remove('active');
             });
+        });
+        
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
         });
     </script>
 </body>
