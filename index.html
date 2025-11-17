@@ -4,181 +4,466 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Muthukumar</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Wilson:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d1117',
+                        secondary: '#161b22',
+                        accent: '#ff6b53',
+                        accentDark: '#ff5233',
+                        textPrimary: '#ffffff',
+                        textSecondary: '#dddddd',
+                        textMuted: '#aaaaaa',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Wilson:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Sora', sans-serif;
+            background-color: #0d1117;
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .font-wilson {
+            font-family: 'Wilson', sans-serif;
+        }
+        
+        .glow-circle {
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, #ff4b2b, #000);
+            border-radius: 50%;
+            position: absolute;
+            top: -30px;
+            z-index: -1;
+            filter: blur(8px);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.2s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.4s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.6s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .fade-in-delay-4 {
+            animation-delay: 0.8s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .btn-fill {
+            padding: 12px 22px;
+            background: #ff6b53;
+            color: white;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-fill:hover {
+            background: #ff5233;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            padding: 12px 22px;
+            border: 1px solid #ff6b53;
+            color: white;
+            border-radius: 6px;
+            transition: background 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255, 107, 83, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .logo-gradient {
+            background: linear-gradient(90deg, #ff6b53, #ff4b2b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-link {
+            position: relative;
+            margin-left: 35px;
+            color: #ddd;
+            transition: 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #ff6b53;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6b53;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .project-card {
+            background: #161b22;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b53, #ff4b2b);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 107, 83, 0.1);
+        }
+        
+        .service-box {
+            padding: 20px 30px;
+            border-left: 3px solid #ff6b53;
+            background: #161b22;
+            border-radius: 0 10px 10px 0;
+            transition: transform 0.3s;
+        }
+        
+        .service-box:hover {
+            transform: translateX(10px);
+        }
+        
+        .skill-badge {
+            background: rgba(255, 107, 83, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+        
+        .skill-badge:hover {
+            background: rgba(255, 107, 83, 0.3);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        @media (max-width: 768px) {
+            .glow-circle {
+                width: 270px;
+                height: 270px;
+            }
+            
+            .hero-img img {
+                width: 250px;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: rgba(13, 17, 23, 0.95);
+                border-radius: 10px;
+                padding: 20px;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            nav.active {
+                display: flex;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-fill, .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .project-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .project-links .btn-outline,
+            .project-links .btn-fill {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-primary text-white overflow-x-hidden">
 
     <!-- NAVBAR -->
-    <header>
-        <div class="logo">Muthukumar</div>
+    <header class="sticky top-0 z-10 bg-primary/80 backdrop-blur-lg border-b border-white/5 p-6 flex items-center justify-between">
+        <div class="logo-gradient text-2xl font-bold">Muthukumar</div>
 
-        <div class="nav-menu">
-            <div class="menu-toggle">
+        <div class="flex items-center justify-end flex-1">
+            <div class="menu-toggle" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contacts</a>
+            <nav id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contacts</a>
             </nav>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section id="home" class="hero">
+    <section id="home" class="flex justify-between items-center p-16 gap-10">
+        <div class="hero-text flex-1">
+            <h2 class="text-4xl fade-in fade-in-delay-1">Hello<span class="text-accent">.</span></h2>
+            <h3 class="text-3xl mt-[-15px] fade-in fade-in-delay-2">I'm Muthukumar</h3>
+            <h1 class="text-5xl font-bold mt-[-5px] logo-gradient fade-in fade-in-delay-3">Multidisciplinary Designer &<br> Developer</h1>
 
-        <div class="hero-text">
-            <h2>Hello<span class="dot">.</span></h2>
-            <h3>I’m Muthukumar</h3>
-            <h1>Multidisciplinary Designer &<br> Developer</h1>
-
-            <div class="buttons">
-                <a class="btn-fill" href="#">Got a project?</a>
-                <a class="btn-outline" href="Muthukumar Resume.pdf" target="_blank">My resume</a>
+            <div class="buttons mt-8 flex gap-4 fade-in fade-in-delay-4">
+                <a href="#" class="btn-fill">Got a project?</a>
+                <a href="Muthukumar Resume.pdf" target="_blank" class="btn-outline">My resume</a>
             </div>
         </div>
 
-        <div class="hero-img">
+        <div class="hero-img relative">
             <div class="glow-circle"></div>
-            <img src="Profile.jpg" alt="Profile Image">
+            <img src="Profile.jpg" alt="Profile Image" class="w-80 rounded-xl">
         </div>
     </section>
 
     <!-- SKILLS BAR -->
-    <div class="skills">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>Javascript</span>
-        <span>Responsive Web Design</span>
-        <span>React</span>
-        <span>Figma</span>
-        <span>Canva</span>
-        <span>Logo Designing</span>
-        <span>Poster/Banner Designing</span>
+    <div class="bg-[#11161d] flex justify-center p-5 gap-8 flex-wrap">
+        <span class="skill-badge text-sm text-textMuted">HTML</span>
+        <span class="skill-badge text-sm text-textMuted">CSS</span>
+        <span class="skill-badge text-sm text-textMuted">Javascript</span>
+        <span class="skill-badge text-sm text-textMuted">Responsive Web Design</span>
+        <span class="skill-badge text-sm text-textMuted">React</span>
+        <span class="skill-badge text-sm text-textMuted">Figma</span>
+        <span class="skill-badge text-sm text-textMuted">Canva</span>
+        <span class="skill-badge text-sm text-textMuted">Logo Designing</span>
+        <span class="skill-badge text-sm text-textMuted">Poster/Banner Designing</span>
     </div>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="about">
-        <div class="services">
+    <section id="about" class="flex justify-between p-20 gap-10">
+        <div class="w-2/5 flex flex-col gap-8">
             <div class="service-box">
-                <h3> Website Development</h3>
+                <h3 class="text-xl">💻 Website Development</h3>
             </div>
             <div class="service-box">
-                <h3> Graphical Designer</h3>
+                <h3 class="text-xl">📱 Graphical Designer</h3>
             </div>
         </div>
 
-        <div class="about-text">
-            <h2>About me</h2>
-            <p>
-               Hello, I’m Muthu Kumar, a dedicated Web Designer, Graphic Designer, and Front-End Creative Developer with a strong passion for crafting visually appealing and user-focused digital experiences. I enjoy transforming ideas into clean, modern designs and bringing them to life through intuitive and engaging interfaces.
-                <br><br>I specialize in creating responsive websites, aesthetic UI layouts, brand-focused graphic designs, and smooth interactive components. With experience in both design and coding, I’m able to bridge the gap between visuals and functionality, ensuring every project is both beautiful and practical.
+        <div class="w-3/5">
+            <h2 class="text-3xl mb-3">About me</h2>
+            <p class="font-wilson text-justify">
+                Hello, I'm Muthu Kumar, a dedicated Web Designer, Graphic Designer, and Front-End Creative Developer with a strong passion for crafting visually appealing and user-focused digital experiences. I enjoy transforming ideas into clean, modern designs and bringing them to life through intuitive and engaging interfaces.
+                <br><br>I specialize in creating responsive websites, aesthetic UI layouts, brand-focused graphic designs, and smooth interactive components. With experience in both design and coding, I'm able to bridge the gap between visuals and functionality, ensuring every project is both beautiful and practical.
                 <br><br>I constantly learn new tools, refine my workflow, and explore creative technologies to deliver high-quality work. My goal is to create meaningful digital experiences that not only look good but also feel seamless for users.
             </p>
 
-            <div class="stats">
-                <div><h1>50+</h1><p>Projects</p></div>
-                <div><h1>95%</h1><p>Success Rate</p></div>
-                <div><h1>10+</h1><p>Clients</p></div>
+            <div class="stats mt-8 flex gap-12">
+                <div>
+                    <h1 class="text-3xl text-accent">50+</h1>
+                    <p class="text-textMuted">Projects</p>
+                </div>
+                <div>
+                    <h1 class="text-3xl text-accent">95%</h1>
+                    <p class="text-textMuted">Success Rate</p>
+                </div>
+                <div>
+                    <h1 class="text-3xl text-accent">10+</h1>
+                    <p class="text-textMuted">Clients</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
+    <section id="projects" class="text-center p-20">
+        <h2 class="text-3xl mb-12 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 after:h-1 after:bg-accent">My Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="project-card">
-                <img src="projects/project1.jpg" alt="Project 1">
-                <h3>Power House</h3>
-                <p>A dynamic web platform for listing rental properties and houses for sale. Users can easily browse, search, and explore homes with an intuitive interface.</p>
-                <div class="project-links">
+                <img src="projects/project1.jpg" alt="Project 1" class="w-full rounded-lg h-52 object-cover">
+                <h3 class="text-2xl my-4">Power House</h3>
+                <p class="text-textMuted leading-normal">A dynamic web platform for listing rental properties and houses for sale. Users can easily browse, search, and explore homes with an intuitive interface.</p>
+                <div class="project-links mt-5 flex gap-4">
                     <a href="https://power-house-tau.vercel.app/" class="btn-outline">Live Demo</a>
-                    <!-- <a href="#" class="btn-fill">Source Code</a> -->
                 </div>
             </div>
             
             <div class="project-card">
-                <img src="projects/project2.jpg" alt="Project 2">
-                <h3>Siva PolyBags</h3>
-                <p>A static website showcasing a polybag manufacturing company and its products. Built to provide clear information and easy navigation for potential clients.</p>
-                <div class="project-links">
+                <img src="projects/project2.jpg" alt="Project 2" class="w-full rounded-lg h-52 object-cover">
+                <h3 class="text-2xl my-4">Siva PolyBags</h3>
+                <p class="text-textMuted leading-normal">A static website showcasing a polybag manufacturing company and its products. Built to provide clear information and easy navigation for potential clients.</p>
+                <div class="project-links mt-5 flex gap-4">
                     <a href="https://siva-poly-bags.vercel.app/" class="btn-outline">Live Demo</a>
-                    <!-- <a href="#" class="btn-fill">Source Code</a> -->
                 </div>
             </div>
             
             <div class="project-card">
-                <img src="projects/project4.jpg" alt="Project 3">
-                <h3>Crackers Site</h3>
-                <p>A responsive e‑commerce website for selling crackers (fireworks) with a browsable product catalog, age verification, safety guidelines, and a secure checkout. Includes inventory management, order tracking, and admin tools for catalog & promotions.</p>
-                <div class="project-links">
+                <img src="projects/project4.jpg" alt="Project 3" class="w-full rounded-lg h-52 object-cover">
+                <h3 class="text-2xl my-4">Crackers Site</h3>
+                <p class="text-textMuted leading-normal">A responsive e‑commerce website for selling crackers (fireworks) with a browsable product catalog, age verification, safety guidelines, and a secure checkout. Includes inventory management, order tracking, and admin tools for catalog & promotions.</p>
+                <div class="project-links mt-5 flex gap-4">
                     <a href="https://kumar-crackers.vercel.app/" class="btn-outline">Live Demo</a>
-                    <!-- <a href="#" class="btn-fill">Source Code</a> -->
-                </div>
-            </div>
-
-             <div class="project-card">
-                <img src="project3.jpg" alt="Project 3">
-                <h3>UI Design - Construction</h3>
-                <p> A sleek and functional construction company UI created in Figma to showcase services and projects effectively.</p>
-                <div class="project-links">
-                    <a href="Construction.pdf" class="btn-outline">Live Demo</a>
-                    <!-- <a href="#" class="btn-fill">Source Code</a> -->
                 </div>
             </div>
 
             <div class="project-card">
-                <img src="project3.jpg" alt="Project 3">
-                <h3>UI Design - Restaurant</h3>
-                <p> A beautifully designed restaurant website in Figma featuring rich imagery and an intuitive dining experience.</p>
-                <div class="project-links">
-                    <a href="Food.pdf" class="btn-outline">Live Demo</a>
-                    <!-- <a href="#" class="btn-fill">Source Code</a> -->
+                <img src="project3.jpg" alt="Project 3" class="w-full rounded-lg h-52 object-cover">
+                <h3 class="text-2xl my-4">UI Design - Construction</h3>
+                <p class="text-textMuted leading-normal">A sleek and functional construction company UI created in Figma to showcase services and projects effectively.</p>
+                <div class="project-links mt-5 flex gap-4">
+                    <a href="Construction.pdf" class="btn-outline">Live Demo</a>
                 </div>
             </div>
 
-
+            <div class="project-card">
+                <img src="project3.jpg" alt="Project 3" class="w-full rounded-lg h-52 object-cover">
+                <h3 class="text-2xl my-4">UI Design - Restaurant</h3>
+                <p class="text-textMuted leading-normal">A beautifully designed restaurant website in Figma featuring rich imagery and an intuitive dining experience.</p>
+                <div class="project-links mt-5 flex gap-4">
+                    <a href="Food.pdf" class="btn-outline">Live Demo</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <p>Feel free to reach out to me for collaborations, job opportunities, or just to say hello!</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <p>muthukumar96368@gmail.com</p>
+    <section id="contact" class="bg-secondary p-20">
+        <h2 class="text-3xl text-center mb-12 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 after:h-1 after:bg-accent">Get In Touch</h2>
+        <div class="flex gap-12">
+            <div class="flex-1">
+                <p class="text-textMuted text-lg text-justify">Feel free to reach out to me for collaborations, job opportunities, or just to say hello!</p>
+                <div class="contact-details my-8">
+                    <div class="mb-5">
+                        <h3 class="text-xl text-accent mb-1">Email</h3>
+                        <p class="text-textSecondary">muthukumar96368@gmail.com</p>
                     </div>
-                    <div class="contact-item">
-                        <h3>Phone</h3>
-                        <p>+91 9042160283</p>
+                    <div class="mb-5">
+                        <h3 class="text-xl text-accent mb-1">Phone</h3>
+                        <p class="text-textSecondary">+91 9042160283</p>
                     </div>
-                    <div class="contact-item">
-                        <h3>Location</h3>
-                        <p>1/931, Murugaiyapuram, Viswanatham, Sivakasi.</p>
+                    <div class="mb-5">
+                        <h3 class="text-xl text-accent mb-1">Location</h3>
+                        <p class="text-textSecondary">1/931, Murugaiyapuram, Viswanatham, Sivakasi.</p>
                     </div>
                 </div>
-                <div class="social-links">
-                    <!-- <a href="#">GitHub</a> -->
-                    <a href="https://www.linkedin.com/in/muthu-kumar-530220281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
-                    <!-- <a href="#">Twitter</a> -->
+                <div class="social-links flex gap-5 mt-8">
+                    <a href="https://www.linkedin.com/in/muthu-kumar-530220281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-textSecondary font-medium transition hover:text-accent">LinkedIn</a>
                 </div>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="btn-fill">Send Message</button>
+            <form class="flex-1 flex flex-col gap-5">
+                <input type="text" placeholder="Your Name" required class="p-4 bg-primary border border-[#30363d] rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+                <input type="email" placeholder="Your Email" required class="p-4 bg-primary border border-[#30363d] rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+                <textarea placeholder="Your Message" rows="5" required class="p-4 bg-primary border border-[#30363d] rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"></textarea>
+                <button type="submit" class="btn-fill w-fit">Send Message</button>
             </form>
         </div>
     </section>
@@ -204,11 +489,18 @@
         });
         
         // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
+        const menuToggle = document.querySelector('#menuToggle');
+        const nav = document.querySelector('#navMenu');
         
         menuToggle.addEventListener('click', () => {
             nav.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
         });
     </script>
 </body>
