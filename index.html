@@ -8,6 +8,8 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Wilson:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -36,7 +38,10 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-        
+        *{
+            max-width: 100%;
+            box-sizing: border-box;
+        }
         .font-wilson {
             font-family: 'Wilson', sans-serif;
         }
@@ -190,7 +195,6 @@
             transform-origin: left;
             transition: transform 0.3s;
         }
-        
         .project-card:hover::before {
             transform: scaleX(1);
         }
@@ -207,7 +211,6 @@
             border-radius: 0 10px 10px 0;
             transition: transform 0.3s;
         }
-        
         .service-box:hover {
             transform: translateX(10px);
         }
@@ -236,7 +239,23 @@
             margin: 3px 0;
             transition: 0.3s;
         }
-        
+        .whatsapp-button {
+            background: #25D366;
+            padding: 14px;
+            border-radius: 50%;
+            color: white;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            background: #1ebe5d;
+        }
+
         @media (max-width: 768px) {
             .glow-circle {
                 width: 270px;
@@ -244,7 +263,7 @@
             }
             
             .hero-img img {
-                width: 250px;
+                width: 220px;
             }
             
             .menu-toggle {
@@ -288,7 +307,6 @@
                 width: 100%;
                 text-align: center;
             }
-            
             .social-links {
                 justify-content: center;
             }
@@ -317,21 +335,21 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section id="home" class="flex justify-between items-center p-16 gap-10">
+    <section id="home" class="flex flex-col-reverse lg:flex-row items-center lg:items-start justify-between px-5 md:px-12 py-10 gap-10">
         <div class="hero-text flex-1">
-            <h2 class="text-4xl fade-in fade-in-delay-1">Hello<span class="text-accent">.</span></h2>
-            <h3 class="text-3xl mt-[-15px] fade-in fade-in-delay-2">I'm Muthukumar</h3>
-            <h1 class="text-5xl font-bold mt-[-5px] logo-gradient fade-in fade-in-delay-3">Multidisciplinary Designer &<br> Developer</h1>
+            <h3 class="text-4xl fade-in fade-in-delay-1">Hello<span class="text-accent">.</span></h3><br>
+            <h4 class="text-3xl mt-[-15px] fade-in fade-in-delay-2">I'm Muthukumar</h4><br>
+            <h5 class="text-3xl md:text-3xl lg:text-4xl font-bold mt-[-5px] logo-gradient fade-in fade-in-delay-3">Multidisciplinary Designer &<br> Developer</h5>
 
             <div class="buttons mt-8 flex gap-4 fade-in fade-in-delay-4">
-                <a href="#" class="btn-fill">Got a project?</a>
+                <a href="#contact" class="btn-fill">Got a project?</a>
                 <a href="Muthukumar Resume.pdf" target="_blank" class="btn-outline">My resume</a>
             </div>
         </div>
 
-        <div class="hero-img relative">
+        <div class="hero-img flex justify-center lg:justify-end flex-1 relative">
             <div class="glow-circle"></div>
-            <img src="Profile.jpg" alt="Profile Image" class="w-80 rounded-xl">
+            <img src="Profile.jpg" alt="Profile Image" class="w-64 md:w-80 rounded-xl">
         </div>
     </section>
 
@@ -347,21 +365,27 @@
         <span class="skill-badge text-sm text-textMuted">Logo Designing</span>
         <span class="skill-badge text-sm text-textMuted">Poster/Banner Designing</span>
     </div>
+    
+ <!-- WhatsApp Button -->
+    <a href="https://wa.me/919042160283" target="_blank" class="whatsapp-button fixed bottom-5 right-10 z-50" style="margin: 20px;">
+        <i class="ri-whatsapp-line ri-lg"></i>
+    </a>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="flex justify-between p-20 gap-10">
-        <div class="w-2/5 flex flex-col gap-8">
-            <div class="service-box">
+    <section id="about" class="flex flex-col md:flex-row justify-between p-6 md:p-20 gap-10">
+        <!--left side-->
+        <div class="w-full md:w-2/5 flex flex-col gap-8">
+            <div>
                 <h3 class="text-xl">💻 Website Development</h3>
             </div>
-            <div class="service-box">
+            <div>
                 <h3 class="text-xl">📱 Graphical Designer</h3>
             </div>
         </div>
-
-        <div class="w-3/5">
+        <!--right side-->
+        <div class="w-full md:w-3/5">
             <h2 class="text-3xl mb-3">About me</h2>
-            <p class="font-wilson text-justify">
+            <p class="font-wilson leading-relaxed">
                 Hello, I'm Muthu Kumar, a dedicated Web Designer, Graphic Designer, and Front-End Creative Developer with a strong passion for crafting visually appealing and user-focused digital experiences. I enjoy transforming ideas into clean, modern designs and bringing them to life through intuitive and engaging interfaces.
                 <br><br>I specialize in creating responsive websites, aesthetic UI layouts, brand-focused graphic designs, and smooth interactive components. With experience in both design and coding, I'm able to bridge the gap between visuals and functionality, ensuring every project is both beautiful and practical.
                 <br><br>I constantly learn new tools, refine my workflow, and explore creative technologies to deliver high-quality work. My goal is to create meaningful digital experiences that not only look good but also feel seamless for users.
@@ -389,7 +413,7 @@
         <h2 class="text-3xl mb-12 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 after:h-1 after:bg-accent">My Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="project-card">
-                <img src="projects/project1.jpg" alt="Project 1" class="w-full rounded-lg h-52 object-cover">
+                <img src="projects/project1.jpg" alt="Project 1" class="w-full rounded-lg object-cover aspect-[4/3] md:aspect-video">
                 <h3 class="text-2xl my-4">Power House</h3>
                 <p class="text-textMuted leading-normal">A dynamic web platform for listing rental properties and houses for sale. Users can easily browse, search, and explore homes with an intuitive interface.</p>
                 <div class="project-links mt-5 flex gap-4">
@@ -398,7 +422,7 @@
             </div>
             
             <div class="project-card">
-                <img src="projects/project2.jpg" alt="Project 2" class="w-full rounded-lg h-52 object-cover">
+                <img src="projects/project2.jpg" alt="Project 2" class="w-full rounded-lg object-cover aspect-[4/3] sm:aspect-video">
                 <h3 class="text-2xl my-4">Siva PolyBags</h3>
                 <p class="text-textMuted leading-normal">A static website showcasing a polybag manufacturing company and its products. Built to provide clear information and easy navigation for potential clients.</p>
                 <div class="project-links mt-5 flex gap-4">
@@ -407,7 +431,7 @@
             </div>
             
             <div class="project-card">
-                <img src="projects/project4.jpg" alt="Project 3" class="w-full rounded-lg h-52 object-cover">
+                <img src="projects/project4.jpg" alt="Project 3" class="w-full rounded-lg object-cover aspect-[4/3] sm:aspect-video">
                 <h3 class="text-2xl my-4">Crackers Site</h3>
                 <p class="text-textMuted leading-normal">A responsive e‑commerce website for selling crackers (fireworks) with a browsable product catalog, age verification, safety guidelines, and a secure checkout. Includes inventory management, order tracking, and admin tools for catalog & promotions.</p>
                 <div class="project-links mt-5 flex gap-4">
@@ -416,7 +440,7 @@
             </div>
 
             <div class="project-card">
-                <img src="project3.jpg" alt="Project 3" class="w-full rounded-lg h-52 object-cover">
+                <img src="projects/project-construction.png" alt="Project 3" class="w-full rounded-lg object-cover aspect-[4/3] sm:aspect-video">
                 <h3 class="text-2xl my-4">UI Design - Construction</h3>
                 <p class="text-textMuted leading-normal">A sleek and functional construction company UI created in Figma to showcase services and projects effectively.</p>
                 <div class="project-links mt-5 flex gap-4">
@@ -425,7 +449,7 @@
             </div>
 
             <div class="project-card">
-                <img src="project3.jpg" alt="Project 3" class="w-full rounded-lg h-52 object-cover">
+                <img src="projects/project-ui.png" alt="Project 3" class="w-full rounded-lg object-cover aspect-[4/3] sm:aspect-video">
                 <h3 class="text-2xl my-4">UI Design - Restaurant</h3>
                 <p class="text-textMuted leading-normal">A beautifully designed restaurant website in Figma featuring rich imagery and an intuitive dining experience.</p>
                 <div class="project-links mt-5 flex gap-4">
@@ -438,7 +462,7 @@
     <!-- CONTACT SECTION -->
     <section id="contact" class="bg-secondary p-20">
         <h2 class="text-3xl text-center mb-12 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-12 after:h-1 after:bg-accent">Get In Touch</h2>
-        <div class="flex gap-12">
+        <div class="flex flex-col md:flex-row gap-12">
             <div class="flex-1">
                 <p class="text-textMuted text-lg text-justify">Feel free to reach out to me for collaborations, job opportunities, or just to say hello!</p>
                 <div class="contact-details my-8">
@@ -459,11 +483,11 @@
                     <a href="https://www.linkedin.com/in/muthu-kumar-530220281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-textSecondary font-medium transition hover:text-accent">LinkedIn</a>
                 </div>
             </div>
-            <form class="flex-1 flex flex-col gap-5">
-                <input type="text" placeholder="Your Name" required class="p-4 bg-primary border border-[#30363d] rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
-                <input type="email" placeholder="Your Email" required class="p-4 bg-primary border border-[#30363d] rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
-                <textarea placeholder="Your Message" rows="5" required class="p-4 bg-primary border border-[#30363d] rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"></textarea>
-                <button type="submit" class="btn-fill w-fit">Send Message</button>
+            <form id="contactForm" class="flex-1 flex flex-col gap-5">
+                <input id="name" type="text" placeholder="Your Name" required class="p-4 bg-primary border border-[#30363d] rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+                <input id="email" type="email" placeholder="Your Email" required class="p-4 bg-primary border border-[#30363d] rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+                <textarea id="message" placeholder="Your Message" rows="5" required class="p-4 bg-primary border border-[#30363d] rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"></textarea>
+                <button type="button" onclick="sendToWhatsApp()" class="btn-fill w-fit">Send Message</button>
             </form>
         </div>
     </section>
@@ -503,5 +527,28 @@
             }
         });
     </script>
+    <script>
+    function sendToWhatsApp() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    const whatsappNumber = "919042160283";
+
+    const whatsappMessage = `Hello, I would like to contact you.%0A%0A` +
+                            `👤 Name: ${name}%0A` +
+                            `📧 Email: ${email}%0A` +
+                            `💬 Message: ${message}`;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+    window.open(url, "_blank");
+}
+</script>
 </body>
 </html>
