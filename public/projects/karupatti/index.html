@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karuppatti Kadai - Authentic Palm Jaggery Products</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config={
+theme:{
+extend:{
+colors:{
+primary:'#8B5A2B',
+secondary:'#D4A76A'
+},
+borderRadius:{
+'none':'0px',
+'sm':'4px',
+DEFAULT:'8px',
+'md':'12px',
+'lg':'16px',
+'xl':'20px',
+'2xl':'24px',
+'3xl':'32px',
+'full':'9999px',
+'button':'8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+font-family: 'Playfair Display', serif;
+}
+.brand-name {
+font-family: 'Pacifico', serif;
+}
+.hero-section {
+background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url('https://readdy.ai/api/search-image?query=Traditional%20palm%20jaggery%20making%20process%20in%20rural%20India%20with%20palm%20trees%20in%20background%2C%20warm%20golden%20hour%20lighting%2C%20rustic%20setting%20with%20traditional%20tools%20and%20methods%2C%20earthy%20tones%2C%20showing%20the%20authentic%20process%20of%20extracting%20palm%20sap%20and%20making%20jaggery%2C%20with%20rich%20textures%20and%20traditional%20elements&width=1920&height=1080&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.pattern-divider {
+background-image: url("data:image/svg+xml,%3Csvg width='60' height='12' viewBox='0 0 60 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 6L15 0L0 6L15 12L30 6ZM60 6L45 0L30 6L45 12L60 6Z' fill='%238B5A2B' fill-opacity='0.2'/%3E%3C/svg%3E");
+height: 12px;
+background-repeat: repeat-x;
+}
+input:focus {
+outline: none;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #8B5A2B;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #8B5A2B;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 2px;
+left: 6px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+</style>
+</head>
+<body class="bg-[#FDF8F3]">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center">
+<h1 class="brand-name text-primary text-2xl">Karuppatti Kadai</h1>
+</div>
+<nav class="hidden md:flex space-x-8" id="main-nav">
+<a href="/" class="text-primary hover:text-primary font-medium border-b-2 border-primary">Home</a>
+<a href="#" class="text-gray-700 hover:text-primary font-medium hover:border-b-2 hover:border-primary">Shop</a>
+<a href="#" class="text-gray-700 hover:text-primary font-medium hover:border-b-2 hover:border-primary">About Us</a>
+<a href="#" class="text-gray-700 hover:text-primary font-medium hover:border-b-2 hover:border-primary">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<div class="relative w-10 h-10 flex items-center justify-center">
+<i class="ri-search-line text-gray-600 ri-lg"></i>
+</div>
+<div class="relative w-10 h-10 flex items-center justify-center">
+<i class="ri-user-line text-gray-600 ri-lg"></i>
+</div>
+<div class="relative w-10 h-10 flex items-center justify-center">
+<i class="ri-shopping-cart-2-line text-gray-600 ri-lg"></i>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">2</span>
+</div>
+<button class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-gray-600 ri-lg"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section min-h-[600px] flex items-center">
+<div class="container mx-auto px-6 py-20 w-full">
+<div class="max-w-2xl">
+<h1 class="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">Authentic Palm Jaggery Products</h1>
+<p class="text-xl text-white/90 mb-8 max-w-xl">Experience the rich taste and health benefits of traditional palm jaggery, handcrafted with care using time-honored methods.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg font-medium !rounded-button whitespace-nowrap">Shop Now</button>
+<button class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/40 px-8 py-3 text-lg font-medium !rounded-button whitespace-nowrap">Learn More</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Story Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Heritage & Tradition</h2>
+<div class="w-20 h-1 bg-primary mb-8"></div>
+<p class="text-gray-600 mb-6 leading-relaxed">Our journey began with a simple mission: to revive the rich taste and health benefits of karuppatti and bring it directly to your home. For generations, palm jaggery has been a staple in traditional households, valued not just for its distinctive taste but also for its numerous health benefits.</p>
+<p class="text-gray-600 mb-8 leading-relaxed">At Karuppatti Kadai, we work directly with skilled artisans who have been crafting palm jaggery for decades using time-honored methods. Each batch is carefully prepared to ensure the highest quality and authentic taste that connects you to our cultural roots.</p>
+<button class="bg-transparent hover:bg-primary/5 text-primary border border-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap">Discover Our Story</button>
+</div>
+<div class="md:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=Traditional%20palm%20jaggery%20making%20process%20showing%20artisans%20collecting%20palm%20sap%20and%20processing%20it%20into%20jaggery%2C%20with%20close-up%20details%20of%20the%20golden-brown%20jaggery%20blocks%20with%20rich%20texture%2C%20showing%20the%20craftsmanship%20and%20traditional%20methods%20in%20a%20rural%20setting%20with%20warm%20lighting%20and%20earthy%20tones&width=600&height=600&seq=2&orientation=squarish" alt="Traditional Palm Jaggery Making" class="w-full h-auto rounded-lg shadow-xl object-cover object-top">
+</div>
+</div>
+</div>
+</section>
+<!-- Pattern Divider -->
+<div class="pattern-divider w-full"></div>
+<!-- Featured Product Section -->
+<section class="py-20 bg-[#FDF8F3]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Signature Product</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Handcrafted with care using traditional methods passed down through generations</p>
+</div>
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2">
+<div class="bg-white p-6 rounded-xl shadow-md">
+<img src="https://readdy.ai/api/search-image?query=Close-up%20of%20premium%20palm%20jaggery%20product%20in%20traditional%20holshell%20packaging%2C%20showing%20rich%20golden-brown%20color%20with%20detailed%20texture%2C%20presented%20on%20a%20rustic%20wooden%20surface%20with%20some%20palm%20leaves%20as%20decoration%2C%20professional%20product%20photography%20with%20soft%20lighting%20highlighting%20the%20natural%20appearance&width=600&height=600&seq=3&orientation=squarish" alt="Karuppatti Holshell" class="w-full h-auto rounded-lg object-cover object-top">
+</div>
+</div>
+<div class="md:w-1/2">
+<h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Karuppatti Holshell</h3>
+<div class="flex items-center mb-6">
+<div class="flex">
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-half-fill text-yellow-400"></i>
+</div>
+<span class="ml-2 text-gray-600">(128 reviews)</span>
+</div>
+<p class="text-gray-600 mb-6">Our special Karuppatti Holshell is handcrafted using time-honored methods and the finest natural ingredients, ensuring purity and goodness in every bite. Experience the authentic taste of tradition with our premium palm jaggery.</p>
+<div class="mb-8">
+<h4 class="font-semibold text-gray-800 mb-3">Key Benefits:</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+<i class="ri-check-line text-primary ri-lg"></i>
+</div>
+<span class="text-gray-600">Rich in iron and essential minerals</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+<i class="ri-check-line text-primary ri-lg"></i>
+</div>
+<span class="text-gray-600">100% natural with no artificial additives</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+<i class="ri-check-line text-primary ri-lg"></i>
+</div>
+<span class="text-gray-600">Traditional flavor that enhances any dish</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+<i class="ri-check-line text-primary ri-lg"></i>
+</div>
+<span class="text-gray-600">Supports sustainable farming practices</span>
+</li>
+</ul>
+</div>
+<div class="flex items-center justify-between mb-8">
+<div>
+<span class="text-3xl font-bold text-gray-800">₹349</span>
+<span class="ml-2 text-gray-500 line-through">₹499</span>
+<span class="ml-2 bg-green-100 text-green-800 text-sm px-2 py-0.5 rounded">30% OFF</span>
+</div>
+<div class="flex items-center border border-gray-300 rounded-lg">
+<button class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-primary">
+<i class="ri-subtract-line ri-lg"></i>
+</button>
+<input type="text" value="1" class="w-12 h-10 text-center border-none text-gray-800" />
+<button class="w-10 h-10 flex items-center justify-center text-gray-600 hover:text-primary">
+<i class="ri-add-line ri-lg"></i>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 font-medium !rounded-button whitespace-nowrap flex items-center">
+<i class="ri-shopping-cart-2-line mr-2"></i>
+Add to Cart
+</button>
+<button class="bg-transparent hover:bg-primary/5 text-primary border border-primary px-8 py-3 font-medium !rounded-button whitespace-nowrap flex items-center">
+<i class="ri-heart-line mr-2"></i>
+Wishlist
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Proposition Strip -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col items-center text-center p-6 bg-[#FDF8F3] rounded-lg">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+<i class="ri-hand-heart-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-3">Traditional Methods</h3>
+<p class="text-gray-600">Crafted using age-old techniques that preserve the authentic taste and nutritional benefits of palm jaggery.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-[#FDF8F3] rounded-lg">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+<i class="ri-leaf-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-3">Natural Ingredients</h3>
+<p class="text-gray-600">100% pure with no additives or preservatives, just the natural goodness of palm sap transformed into jaggery.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-[#FDF8F3] rounded-lg">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+<i class="ri-heart-pulse-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-3">Health Benefits</h3>
+<p class="text-gray-600">Rich in iron, minerals, and antioxidants that support overall wellness and traditional health practices.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Shopping Experience -->
+<section class="py-20 bg-[#FDF8F3]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Simple & Secure Shopping</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">We've built our e-commerce platform to make your shopping experience easy, secure, and satisfying</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-shopping-basket-2-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Browse & Select</h3>
+<p class="text-gray-600">Explore our range of authentic palm jaggery products</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-secure-payment-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Secure Checkout</h3>
+<p class="text-gray-600">Multiple payment options with secure encryption</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-truck-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Fast Delivery</h3>
+<p class="text-gray-600">Carefully packed and promptly shipped to your door</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-customer-service-2-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Customer Support</h3>
+<p class="text-gray-600">Dedicated team ready to assist with any questions</p>
+</div>
+</div>
+<div class="mt-16 bg-white p-8 rounded-lg shadow-sm">
+<div class="flex flex-col md:flex-row items-center justify-between">
+<div class="mb-6 md:mb-0">
+<h3 class="text-2xl font-semibold text-gray-800 mb-2">Trusted Payment Options</h3>
+<p class="text-gray-600">Shop with confidence using our secure payment methods</p>
+</div>
+<div class="flex flex-wrap gap-6">
+<div class="flex items-center">
+<i class="ri-visa-fill text-blue-700 ri-2x"></i>
+</div>
+<div class="flex items-center">
+<i class="ri-mastercard-fill text-orange-600 ri-2x"></i>
+</div>
+<div class="flex items-center">
+<i class="ri-paypal-fill text-blue-600 ri-2x"></i>
+</div>
+<div class="flex items-center">
+<i class="ri-amazon-pay-fill text-yellow-500 ri-2x"></i>
+</div>
+<div class="flex items-center">
+<i class="ri-google-pay-fill text-gray-700 ri-2x"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-20 bg-primary/10">
+<div class="container mx-auto px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Join Our Community</h2>
+<p class="text-gray-600 mb-8">Subscribe to receive updates on new products, special offers, and traditional recipes using our palm jaggery</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+<input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:border-primary bg-white" />
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Subscribe</button>
+</div>
+<div class="mt-4 flex items-center justify-center">
+<input type="checkbox" id="consent" class="custom-checkbox" />
+<label for="consent" class="ml-2 text-sm text-gray-600">I agree to receive marketing communications from Karuppatti Kadai</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div>
+<h3 class="brand-name text-2xl mb-4">Karuppatti Kadai</h3>
+<p class="text-gray-400 mb-6">Bringing the authentic taste of traditional palm jaggery to your doorstep since 2018.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-primary rounded-full">
+<i class="ri-facebook-fill ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-primary rounded-full">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-primary rounded-full">
+<i class="ri-twitter-x-line ri-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 hover:bg-primary rounded-full">
+<i class="ri-youtube-line ri-lg"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Shop All</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Customer Service</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Returns & Refunds</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-400">123 Palm Street, Chennai, Tamil Nadu, India - 600001</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-400">+91 98765 43210</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-400">info@karupattikadai.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+<p>© 2025 Karuppatti Kadai. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Quantity counter
+const minusBtn = document.querySelector('button:has(.ri-subtract-line)');
+const plusBtn = document.querySelector('button:has(.ri-add-line)');
+const quantityInput = document.querySelector('input[type="text"][value="1"]');
+if (minusBtn && plusBtn && quantityInput) {
+minusBtn.addEventListener('click', function() {
+let value = parseInt(quantityInput.value);
+if (value > 1) {
+quantityInput.value = value - 1;
+}
+});
+plusBtn.addEventListener('click', function() {
+let value = parseInt(quantityInput.value);
+quantityInput.value = value + 1;
+});
+}
+
+// Navigation active state
+const mainNav = document.getElementById('main-nav');
+if (mainNav) {
+const currentPath = window.location.pathname;
+const navLinks = mainNav.getElementsByTagName('a');
+for (let link of navLinks) {
+if (link.getAttribute('href') === currentPath) {
+link.classList.add('text-primary', 'border-b-2', 'border-primary');
+link.classList.remove('text-gray-700', 'hover:border-b-2');
+}
+}
+}
+});
+</script>
+</body>
+</html>
